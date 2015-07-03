@@ -84,6 +84,13 @@ class Client
     private $phone_search_path = '/v2/phone_search/';
 
     /**
+     * Requested latest unsigned url
+     *
+     * @var string
+     */
+    private $latest_unsigned_url;
+
+    /**
      * Create new client
      *
      * @param array $configuration
@@ -186,6 +193,16 @@ class Client
     }
 
     /**
+     * Get requested latest unsigned url
+     *
+     * @return   string                     The requested latest unsigned url
+     */
+    public function getLatestUnsignedUrl()
+    {
+        return $this->latest_unsigned_url;
+    }
+
+    /**
      * Parse configuration using defaults
      *
      * @param  array $configuration
@@ -246,6 +263,7 @@ class Client
         $url = $this->buildUnsignedUrl($this->api_host, $path);
 
         try {
+            $this->latest_unsigned_url = $url;
             $response = $client->get($url, ['auth' => 'oauth']);
         } catch (ClientException $e) {
             $exception = new Exception($e->getMessage());
