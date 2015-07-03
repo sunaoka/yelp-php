@@ -1,7 +1,7 @@
 {
-    "name": "stevenmaguire/yelp-php",
+    "name": "sunaoka/yelp-php",
     "description": "A php client for consuming Yelp API",
-    "homepage" : "http://github.com/stevenmaguire/yelp-php",
+    "homepage" : "http://github.com/sunaoka/yelp-php",
     "authors" : [
         {
             "name" : "Steven Maguire",
